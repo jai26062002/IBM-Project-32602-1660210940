@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Assignment-1</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box
+      }
+
+      html {
+        font-family: sans-serif;
+        font-size: 1rem;
+        color: #444;
+      }
+
+      #register {
+        text-align: center;
+        max-width: 500px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+      }
+
+      form {
+        display: flexbox;
+        text-align: center;
+        line-height: 50px;
+        margin-bottom: 2rem;
+      }
+
+      .login{
+        margin-right: 100px;
+      }
+
+      .select {
+        color: rgb(106, 99, 99);
+      }
+
+      .selected {
+        color: black;
+      }
+
+      .ratiobtn {
+        font-family: sans-serif;
+        font-size: 1rem;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        padding-right: 8%;
+        margin-bottom: 10px;
+      }
+
+      [type="radio"] {
+        vertical-align: middle;
+        margin-bottom: 6px;
+        width: 1.3rem;
+        height: 1.3rem;  
+        margin-left: 80px;
+        margin-right: 5px;
+      }
+
+      [type="text"],[type="number"],[type="email"],[name="qualification"],
+      button {
+        display: inline-block;
+        -webkit-appearance: none;
+        padding: .5rem 1rem;
+        font-size: 1rem;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+      }
+
+      button {
+        cursor: pointer;
+        background: #007bff;
+        color: white;
+        border: 2px solid #007bff;
+        margin: 0 .5rem;
+      }
+
+      [type="text"],[type="number"],[type="email"],[name="qualification"] {
+        width: 100%;
+      }
+
+      [type="text"]:active,
+      [type="text"]:focus {
+        outline: 0;
+        border: 2px solid #007bff;
+      }
+
+      [type="number"]:active,
+      [type="number"]:focus {
+        outline: 0;
+        border: 2px solid #007bff;
+      }
+
+      [type="email"]:active,
+      [type="email"]:focus {
+        outline: 0;
+        border: 2px solid #007bff;
+      }
+
+      [name="qualification"]:active,
+      [name="qualification"]:focus {
+        outline: 0;
+        border: 2px solid #007bff;
+      }
+
+      h1 {
+        color: #222;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div id="register">
+        <h1>User Details</h1>
+        <form action="Home.html" method="post">
+            <input type="text" placeholder="Name" name="name" required>
+            <input type="number" placeholder="Age" name="age" required>
+            <input type="email" placeholder="E-Mail" name="email" required>
+            <input type="text" placeholder="Mobile Number" name="mob" maxlength="10" minlength="10" required>
+            <select name="qualification" id="que" onchange="this.className=this.options[this.selectedIndex].className"
+            class="select" required>
+              <option class="select" value="" disabled selected>Select your Qualification</option>
+              <option class="selected" value="SSLC">SSLC</option>
+              <option class="selected" value="HSC">HSC</option>
+              <option class="selected" value="UG">UG</option>
+              <option class="selected" value="PG">PG</option>
+            </select>
+            <div class="ratiobtn">
+              <b>Gender: </b><label><input type="radio" id="male" name="gender" value="Male" required>
+              <span>MALE</span></label>
+              <label>
+              <input type="radio" id="female" name="gender" value="Female">
+              <span>FEMALE</span></label><br>
+            </div>
+            <button type="button" class="login" id="loginButton">Login</button>
+            <button type="submit" id="submiButton">Submit</button>
+        </form>
+    </div>
+    <script>
+      document.getElementById("loginButton").onclick = function () {
+        window.location.replace("Login.html");
+      };
+    </script>
+  </body>
+</html>
